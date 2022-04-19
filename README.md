@@ -47,4 +47,4 @@ express,
 ## Links
 * Heroku:
 * GitHub: 
-* Repository: 
+* Repository: https://github.com/SAziz24/Tech-Blog 
