@@ -1,0 +1,22 @@
+[
+    {
+      "name": "Michael",
+      "email": "Michael@kinetic.com",
+      "password": "password12345"
+    },
+    {
+      "name": "Brit",
+      "email": "Brit@kinetic.com",
+      "password": "password12345"
+    },
+    {
+      "name": "Sumi",
+      "email": "Sumi@kinetic.com",
+      "password": "password12345"
+    },
+    {
+      "name": "Chris",
+      "email": "Chris@kinetic.com",
+      "password": "password12345"
+    }
+  ]

@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Submit Button",
+      "description": "The submit button is not working on the comments page."
+    },
+    {
+      "name": "Local Host",
+      "description": "Opened a new terminal and server but the local host page is not loading"
+    },
+    {
+      "name": "Github Changes",
+      "description": "Git pull is not pulling in new changes from Github"
+    }
+  ]

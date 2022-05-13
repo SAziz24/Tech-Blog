@@ -1,41 +1,18 @@
 const router = require('express').Router();
-const { Post, Comment, User } = require('../../models');
+const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all posts and JOIN with user data
-    const postData = await Post.findAll({ 
-    }); 
+    const postData = await Post.findAll();
+
     res.status(200).json(postData);
-    
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/post/:id', async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-        {
-          model: Comment,
-        },
-      ],
-    });
-
-    const post = postData.get({ plain: true });
-
-    res.status(200).json(post);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
+// /api/posts/
 router.post('/', withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -49,25 +26,30 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
+// update /api/posts/:id
+router.put('/:id', withAuth, async (req, res) => {
+  console.log('put request called');
   try {
-  // update a category by its `id` value
-  const postData = await Post.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-});
-if (!postData[0]) {
-  res.status(404).json({ message: 'No post found with this id!' });
-      return;
-    }
-    res.status(200).json(postData);
+    const updatePost = await Post.update(
+      {
+        title: req.body.title,
+        content: req.body.content,
+      },
+      {
+        where: {
+          id: req.params.id,
+        },
+      }
+    );
+
+    res.status(200).json(updatePost);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
-router.delete('/:id', async (req, res) => {
+//api/posts/:id
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.destroy({
       where: {
