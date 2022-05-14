@@ -5,7 +5,7 @@ CMS-style blog site similar to a Wordpress site, where developers can publish th
 
 ## TABLE OF CONTENTS
 1. [Installation](#Installation)
-2. [Usage](#Usage)
+2. [Screenshot](#Screenshot)
 3. [Technologies](#Technologies)
 4. [License](#License)
 5. [Links](#Links)
@@ -26,9 +26,9 @@ express,
 
 * mysql to upload database.
 
-## USAGE
-*
-*
+## Screenshot
+![screenshot of Tech blog](./public/images/techblogScreenshot.PNG)
+![Screenshot of Dashboard](./public/images/Dashboard.PNG)
 
 ## TECHNOLOGIES
 * [Sequelize](https://www.npmjs.com/package/sequelize)
