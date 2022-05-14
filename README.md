@@ -45,6 +45,5 @@ express,
  Licensed under the MIT license.
 
 ## Links
-* Heroku:
-* GitHub: 
-* Repository: https://github.com/SAziz24/Tech-Blog 
+* Heroku: https://safe-brook-44495.herokuapp.com/
+* GitHub: https://github.com/SAziz24/Tech-Blog
